@@ -1,0 +1,22 @@
+# Load the dataset
+df = pd.read_csv('sales_data.csv')
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('sales_data.csv')
+
+# Display the first few rows
+print(df.head())
+
+# Check the structure of the dataset
+print(df.info())
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Fill missing values (example)
+df['Sales'] = df['Sales'].fillna(df['Sales'].mean())
+df['Region'] = df['Region'].fillna(df['Region'].mode()[0])
+
+# Verify no missing values
+print(df.isnull().sum())
